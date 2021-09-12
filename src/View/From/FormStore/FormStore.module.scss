@@ -1,0 +1,67 @@
+.main {
+  > div {
+    margin-bottom: 32px;
+  }
+  > .first {
+    display: flex;
+    justify-content: space-between;
+    height: 55.5px;
+    align-items: center;
+    > div {
+      width: 48%;
+      > :first-child {
+        font-size: 16px;
+        color: rgba(178, 178, 178, 1);
+      }
+      > :last-child {
+        font-size: 20px;
+        color: rgba(39, 25, 25, 1);
+        font-weight: 700;
+      }
+      > span {
+        display: block;
+      }
+    }
+  }
+  .cheked {
+    > :last-child {
+      margin-left: 10px;
+    }
+    margin-bottom: 40px;
+  }
+  .docs {
+    cursor: pointer;
+    padding: 25px;
+    text-align: center;
+    border: 1px dashed rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+
+    > :first-child {
+      color: #e62b25;
+    }
+    > :last-child {
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
+  .Oneclass {
+    margin-bottom: 32px;
+    height: 55.5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    > :first-child {
+      font-size: 16px;
+      color: rgba(178, 178, 178, 1);
+    }
+    > :last-child {
+      font-size: 20px;
+      color: rgba(39, 25, 25, 1);
+      font-weight: 700;
+    }
+    > span {
+      display: block;
+    }
+  }
+}

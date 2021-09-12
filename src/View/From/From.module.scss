@@ -1,0 +1,89 @@
+.main {
+  > div {
+    display: flex;
+    justify-content: space-between;
+    > div {
+      width: 48%;
+    }
+    > .form {
+      width: 50%;
+      .errorChecked {
+        border-color: red !important;
+      }
+      .errorCheckedText {
+        color: red;
+      }
+      .document {
+        cursor: pointer;
+        padding: 25px;
+        text-align: center;
+        border: 1px dashed rgba(0, 0, 0, 0.5);
+        border-radius: 24px;
+
+        > :first-child {
+          color: red;
+        }
+        .main {
+          color: rgba(0, 0, 0, 0.5);
+        }
+        > :last-child {
+          color: black;
+        }
+      }
+      .label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        > .firstChild {
+          width: 26px;
+          height: 26px;
+          border-radius: 10px;
+          border: 1px solid #cfcfcf;
+        }
+
+        > img {
+          width: 28px;
+        }
+
+        > :last-child {
+          margin-left: 10px;
+        }
+      }
+      .diploma {
+        display: flex;
+        justify-content: space-between;
+        > div {
+          width: 48%;
+        }
+      }
+      > div {
+        margin-bottom: 32px;
+      }
+      > :first-child {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        > div {
+          width: 48%;
+        }
+      }
+    }
+  }
+
+  > .btn {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+    :first-child {
+      background-color: red;
+      color: #fff;
+      border: none;
+    }
+    > button {
+      width: 300px;
+    }
+  }
+}
