@@ -1,3 +1,3 @@
-# react-zgvepc
+# react-zфыgvepc
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-zgvepc)
+[Тестовое задание](https://stackblitz.com/edit/react-zgvepc)
