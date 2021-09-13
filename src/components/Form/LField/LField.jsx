@@ -60,10 +60,18 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export const LField = (props, ref) => {
+export const LField = props => {
   const classes = useStyles();
   const [isShowHide, setIsShowHide] = useState(true);
-  const { errors, appClassName, ...rest } = props;
+  const {
+    errors,
+    appClassName,
+    type,
+    onChange,
+    inputRef,
+    max,
+    ...rest
+  } = props;
   return (
     <div className={`${style.main} ${appClassName}`}>
       <Controller
@@ -72,6 +80,10 @@ export const LField = (props, ref) => {
         render={({ field }) => (
           <CssTextField
             {...field}
+            inputProps={max && { maxLength: max }}
+            inputRef={inputRef}
+            onChange={onChange}
+            type={type}
             className={classes.margin}
             error={!!errors[rest.name]}
             label={rest.label}

@@ -37,6 +37,9 @@ const From = () => {
   const dispatch = useDispatch();
   const inputFile = useRef(null);
 
+  const diploma_number = useRef();
+  const diploma_specialty = useRef();
+  const diploma_qualification = useRef();
   const onButtonClick = () => {
     inputFile.current.click();
   };
@@ -47,7 +50,6 @@ const From = () => {
   const {
     handleSubmit,
     control,
-    reset,
     getValues,
     setValue,
     formState: { errors }
@@ -95,7 +97,11 @@ const From = () => {
               <LField
                 id="year_ending"
                 name="year_ending"
-                type="text"
+                type="number"
+                onChange={e => {
+                  const { name, value } = e.target;
+                  setValue(name, value);
+                }}
                 label={'Год окончания'}
                 control={control}
                 errors={errors}
@@ -119,6 +125,12 @@ const From = () => {
                 id="diploma_series"
                 name="diploma_series"
                 type="text"
+                onChange={e => {
+                  const { name, value, maxLength } = e.target;
+                  setValue(name, value);
+                  value.length === maxLength && diploma_number.current.focus();
+                }}
+                max={8}
                 label={'Серия диплома'}
                 control={control}
                 errors={errors}
@@ -129,6 +141,14 @@ const From = () => {
                 id="diploma_number"
                 name="diploma_number"
                 type="text"
+                onChange={e => {
+                  const { name, value, maxLength } = e.target;
+                  setValue(name, value);
+                  value.length === maxLength &&
+                    diploma_specialty.current.focus();
+                }}
+                max={8}
+                inputRef={diploma_number}
                 label={'Номер диплома'}
                 control={control}
                 errors={errors}
@@ -141,6 +161,13 @@ const From = () => {
                 id="diploma_specialty"
                 name="diploma_specialty"
                 type="text"
+                onChange={e => {
+                  const { name, value, maxLength } = e.target;
+                  setValue(name, value);
+                  value.length === maxLength && diploma_qualification.current.focus();
+                }}
+                max={8}
+                inputRef={diploma_specialty}
                 label={'Специальность по диплому'}
                 control={control}
                 errors={errors}
@@ -152,6 +179,7 @@ const From = () => {
               <LField
                 id="diploma_qualification"
                 name="diploma_qualification"
+                inputRef={diploma_qualification}
                 type="text"
                 label={'Квалификация по диплому'}
                 control={control}
