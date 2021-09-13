@@ -164,7 +164,8 @@ const From = () => {
                 onChange={e => {
                   const { name, value, maxLength } = e.target;
                   setValue(name, value);
-                  value.length === maxLength && diploma_qualification.current.focus();
+                  value.length === maxLength &&
+                    diploma_qualification.current.focus();
                 }}
                 max={8}
                 inputRef={diploma_specialty}
@@ -180,6 +181,10 @@ const From = () => {
                 id="diploma_qualification"
                 name="diploma_qualification"
                 inputRef={diploma_qualification}
+                onChange={e => {
+                  const { name, value, maxLength } = e.target;
+                  setValue(name, value);
+                }}
                 type="text"
                 label={'Квалификация по диплому'}
                 control={control}
